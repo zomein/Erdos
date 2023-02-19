@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D894127629A2E3D900A7E5DB /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D894127529A2E3D900A7E5DB /* ContactDetailsViewController.swift */; };
 		D8B8035329A273A60085EFC1 /* ContactsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B8035229A273A60085EFC1 /* ContactsListViewController.swift */; };
 		D8B8035D29A27BD20085EFC1 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B8035C29A27BD20085EFC1 /* FriendCell.swift */; };
 		D8BAE4D429A0108500574084 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BAE4D329A0108500574084 /* AppDelegate.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D894127529A2E3D900A7E5DB /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
 		D8B8035229A273A60085EFC1 /* ContactsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListViewController.swift; sourceTree = "<group>"; };
 		D8B8035C29A27BD20085EFC1 /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
 		D8BAE4D029A0108500574084 /* Erdos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Erdos.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D894127729A2E56F00A7E5DB /* ContactDetailsView */ = {
+			isa = PBXGroup;
+			children = (
+				D894127529A2E3D900A7E5DB /* ContactDetailsViewController.swift */,
+			);
+			path = ContactDetailsView;
+			sourceTree = "<group>";
+		};
 		D8B8035A29A27B4A0085EFC1 /* ContactListView */ = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +88,7 @@
 				D8BAE4D529A0108500574084 /* SceneDelegate.swift */,
 				D8B8035B29A27B5D0085EFC1 /* SignInView */,
 				D8B8035A29A27B4A0085EFC1 /* ContactListView */,
+				D894127729A2E56F00A7E5DB /* ContactDetailsView */,
 				D8BAE4DC29A0108700574084 /* Assets.xcassets */,
 				D8BAE4DE29A0108700574084 /* LaunchScreen.storyboard */,
 				D8BAE4E129A0108700574084 /* Info.plist */,
@@ -158,6 +169,7 @@
 			files = (
 				D8BAE4D829A0108500574084 /* SignInViewController.swift in Sources */,
 				D8BAE4D429A0108500574084 /* AppDelegate.swift in Sources */,
+				D894127629A2E3D900A7E5DB /* ContactDetailsViewController.swift in Sources */,
 				D8B8035D29A27BD20085EFC1 /* FriendCell.swift in Sources */,
 				D8BAE4D629A0108500574084 /* SceneDelegate.swift in Sources */,
 				D8B8035329A273A60085EFC1 /* ContactsListViewController.swift in Sources */,

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+// TODO: create detail view
 class ContactListViewController: UITableViewController {
     
     override func viewDidLoad() {
@@ -50,7 +50,8 @@ class ContactListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Showing contact details")
+        let detailsVC = ContactDetailsViewController()
+        navigationController?.pushViewController(detailsVC, animated: false)
     }
     
 }
