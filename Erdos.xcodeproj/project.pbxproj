@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D8B8035329A273A60085EFC1 /* ContactsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B8035229A273A60085EFC1 /* ContactsListViewController.swift */; };
+		D8B8035D29A27BD20085EFC1 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B8035C29A27BD20085EFC1 /* FriendCell.swift */; };
 		D8BAE4D429A0108500574084 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BAE4D329A0108500574084 /* AppDelegate.swift */; };
 		D8BAE4D629A0108500574084 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BAE4D529A0108500574084 /* SceneDelegate.swift */; };
 		D8BAE4D829A0108500574084 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BAE4D729A0108500574084 /* SignInViewController.swift */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D8B8035229A273A60085EFC1 /* ContactsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListViewController.swift; sourceTree = "<group>"; };
+		D8B8035C29A27BD20085EFC1 /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
 		D8BAE4D029A0108500574084 /* Erdos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Erdos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8BAE4D329A0108500574084 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8BAE4D529A0108500574084 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +39,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D8B8035A29A27B4A0085EFC1 /* ContactListView */ = {
+			isa = PBXGroup;
+			children = (
+				D8B8035229A273A60085EFC1 /* ContactsListViewController.swift */,
+			);
+			path = ContactListView;
+			sourceTree = "<group>";
+		};
+		D8B8035B29A27B5D0085EFC1 /* SignInView */ = {
+			isa = PBXGroup;
+			children = (
+				D8BAE4D729A0108500574084 /* SignInViewController.swift */,
+			);
+			path = SignInView;
+			sourceTree = "<group>";
+		};
 		D8BAE4C729A0108500574084 = {
 			isa = PBXGroup;
 			children = (
@@ -56,10 +76,12 @@
 			children = (
 				D8BAE4D329A0108500574084 /* AppDelegate.swift */,
 				D8BAE4D529A0108500574084 /* SceneDelegate.swift */,
-				D8BAE4D729A0108500574084 /* SignInViewController.swift */,
+				D8B8035B29A27B5D0085EFC1 /* SignInView */,
+				D8B8035A29A27B4A0085EFC1 /* ContactListView */,
 				D8BAE4DC29A0108700574084 /* Assets.xcassets */,
 				D8BAE4DE29A0108700574084 /* LaunchScreen.storyboard */,
 				D8BAE4E129A0108700574084 /* Info.plist */,
+				D8B8035C29A27BD20085EFC1 /* FriendCell.swift */,
 			);
 			path = Erdos;
 			sourceTree = "<group>";
@@ -136,7 +158,9 @@
 			files = (
 				D8BAE4D829A0108500574084 /* SignInViewController.swift in Sources */,
 				D8BAE4D429A0108500574084 /* AppDelegate.swift in Sources */,
+				D8B8035D29A27BD20085EFC1 /* FriendCell.swift in Sources */,
 				D8BAE4D629A0108500574084 /* SceneDelegate.swift in Sources */,
+				D8B8035329A273A60085EFC1 /* ContactsListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

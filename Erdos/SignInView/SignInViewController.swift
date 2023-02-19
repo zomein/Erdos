@@ -6,6 +6,7 @@
 //
 
 import UIKit
+// TODO: simulate loading
 
 class SignInViewController: UIViewController {
 
@@ -102,7 +103,9 @@ class SignInViewController: UIViewController {
     }
 
     @objc func signInButtonTapped(_ sender: UIButton) {
-        print("tap")
+        let homeVC = ContactListViewController()
+        
+        navigationController?.pushViewController(homeVC, animated: false)
     }
 
 }
