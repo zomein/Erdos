@@ -50,7 +50,10 @@ class FriendCell: UITableViewCell {
         return l
     }()
     
-    func configure() {
+    func configure(friend: Friend) {
+        nameLabel.text = friend.name
+        emailString.text = friend.email
+        
         setupUI()
     }
     

@@ -18,12 +18,10 @@ final class NetworkingManager {
     
     // MARK: Mock Sign In Authentication
     func signIn(email: String, password: String, completion: @escaping (Bool) -> Void) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.async {
             if email == "Test@test.com" && password == "password" {
-                print("sign in success!")
                 completion(true)
             } else {
-                print("sign in failed")
                 completion(false)
             }
         }
@@ -31,8 +29,7 @@ final class NetworkingManager {
     
     // MARK: Mock Fetching Calls
     func fetchAllFriends(completion: @escaping (Result<[Friend], Error>) -> Void) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            print("fetch complete")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             completion(.success(Server.friendsData))
         }
     }

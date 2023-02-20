@@ -6,8 +6,10 @@
 //
 
 import UIKit
-// TODO: create detail view
+
 class ContactListViewController: UITableViewController {
+    
+    let viewModel = ContactListViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +18,9 @@ class ContactListViewController: UITableViewController {
         tableView.separatorStyle = .none
         
         setupUI()
+        setupBindings()
+        
+        viewModel.fetchFriends()
     }
     
     private func setupUI() {
@@ -24,23 +29,34 @@ class ContactListViewController: UITableViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Close", style: .done, target: self, action: #selector(closeBtnTapped))
     }
     
+    private func setupBindings() {
+        // what to do when friends array is updated
+        viewModel.friends.bind { [weak self] friends in
+            self?.tableView.reloadData() // update list to show updated friends data
+        }
+    }
+    
     @objc func closeBtnTapped(button: UIBarButtonItem) {
         navigationController?.popViewController(animated: false)
     }
     
     // MARK: TableView Datasource & Delegate Methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 25
+        return viewModel.friends.value?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let friendCell = tableView.dequeueReusableCell(withIdentifier: FriendCell.identifier, for: indexPath) as? FriendCell else {
+        guard
+            let friendCell = tableView.dequeueReusableCell(withIdentifier: FriendCell.identifier, for: indexPath) as? FriendCell,
+            let friends = viewModel.friends.value
+        else {
             fatalError("could not dequeue friend cell")
         }
         
+        
         friendCell.selectionStyle = .none
         friendCell.accessoryType = .disclosureIndicator
-        friendCell.configure()
+        friendCell.configure(friend: friends[indexPath.row])
         
         return friendCell
     }

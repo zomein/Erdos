@@ -20,6 +20,7 @@
 		D8BAE4D829A0108500574084 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BAE4D729A0108500574084 /* SignInViewController.swift */; };
 		D8BAE4DD29A0108700574084 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8BAE4DC29A0108700574084 /* Assets.xcassets */; };
 		D8BAE4E029A0108700574084 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8BAE4DE29A0108700574084 /* LaunchScreen.storyboard */; };
+		D8D648D529A417B600963222 /* ContactListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D648D429A417B600963222 /* ContactListViewModel.swift */; };
 		D8E13B2E29A3C6FA0006A0DB /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = D8E13B2D29A3C6FA0006A0DB /* ProgressHUD */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		D8BAE4DC29A0108700574084 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8BAE4DF29A0108700574084 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8BAE4E129A0108700574084 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8D648D429A417B600963222 /* ContactListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				D8B8035229A273A60085EFC1 /* ContactsListViewController.swift */,
+				D8D648D429A417B600963222 /* ContactListViewModel.swift */,
 			);
 			path = ContactListView;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				D894127B29A2E84900A7E5DB /* Server.swift in Sources */,
 				D894127D29A2EA8C00A7E5DB /* NetworkingManager.swift in Sources */,
 				D894128129A30DA900A7E5DB /* SignInViewModel.swift in Sources */,
+				D8D648D529A417B600963222 /* ContactListViewModel.swift in Sources */,
 				D8BAE4D629A0108500574084 /* SceneDelegate.swift in Sources */,
 				D8B8035329A273A60085EFC1 /* ContactsListViewController.swift in Sources */,
 			);

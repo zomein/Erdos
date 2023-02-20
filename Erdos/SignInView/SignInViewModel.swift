@@ -13,10 +13,8 @@ final class SignInViewModel {
     var signInSuccessful: ObservableObject<Bool?> = ObservableObject(nil)
     
     func signIn(email: String, password: String) {
-        ProgressHUD.show()
         NetworkingManager.shared.signIn(email: email, password: password) { wasSuccessful in
             self.signInSuccessful.value = wasSuccessful
-            ProgressHUD.dismiss()
         }
     }
 }
