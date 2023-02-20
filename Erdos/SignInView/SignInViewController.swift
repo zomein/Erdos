@@ -6,7 +6,6 @@
 //
 
 import UIKit
-// TODO: simulate loading
 
 class SignInViewController: UIViewController {
 
@@ -44,6 +43,14 @@ class SignInViewController: UIViewController {
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
     }()
+    lazy private var failedSignInLabel: UILabel = {
+       let l = UILabel()
+        l.text = "Sign in attempt failed. Please try again"
+        l.font = UIFont.systemFont(ofSize: 13)
+        l.textColor = .red
+        l.translatesAutoresizingMaskIntoConstraints = false
+        return l
+    }()
     lazy private var signInButton: UIButton = {
         let butt = UIButton()
         butt.addTarget(self, action: #selector(signInButtonTapped), for: .touchUpInside)
@@ -54,12 +61,15 @@ class SignInViewController: UIViewController {
         return butt
     }()
     
+    let viewModel = SignInViewModel()
+    
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         setupUI()
+        setupBinders()
     }
     
     // MARK: Helper Methods
@@ -70,6 +80,7 @@ class SignInViewController: UIViewController {
         view.addSubview(usernameLineView)
         view.addSubview(passwordTextField)
         view.addSubview(passwordLineView)
+        view.addSubview(failedSignInLabel)
         view.addSubview(signInButton)
         
         NSLayoutConstraint.activate([
@@ -96,17 +107,52 @@ class SignInViewController: UIViewController {
             passwordLineView.leadingAnchor.constraint(equalTo: passwordTextField.leadingAnchor),
             passwordLineView.heightAnchor.constraint(equalTo: usernameLineView.heightAnchor),
             
-            signInButton.topAnchor.constraint(equalTo: passwordLineView.bottomAnchor, constant: 50),
+            failedSignInLabel.topAnchor.constraint(equalTo: passwordLineView.bottomAnchor, constant: 10),
+            failedSignInLabel.leadingAnchor.constraint(equalTo: passwordLineView.leadingAnchor),
+            
+            signInButton.topAnchor.constraint(equalTo: failedSignInLabel.bottomAnchor, constant: 40),
             signInButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             signInButton.widthAnchor.constraint(equalTo: passwordLineView.widthAnchor, multiplier: 1),
         ])
+        
+        failedSignInLabel.isHidden = true
     }
 
-    @objc func signInButtonTapped(_ sender: UIButton) {
-        let homeVC = ContactListViewController()
+    private func setupBinders() {
+        // subscribe to 'signInSuccessful' property
+        viewModel.signInSuccessful.bind { [weak self] signInSuccessful in
+            if signInSuccessful == true {
+                self?.goToContactsPage()
+            } else {
+                self?.handleSignInFailed()
+            }
+        }
+    }
+    
+    private func goToContactsPage() {
+        failedSignInLabel.isHidden = true
         
+        let homeVC = ContactListViewController()
         navigationController?.pushViewController(homeVC, animated: false)
     }
+    
+    private func handleSignInFailed() {
+        // create label to show error message
+        failedSignInLabel.isHidden = false
+    }
 
+    // MARK: Objc UI action handlers/selectors
+    @objc func signInButtonTapped(_ sender: UIButton) {
+        guard
+            let email = usernameTextField.text,
+            let password = passwordTextField.text,
+            !email.isEmpty,
+            !password.isEmpty
+        else { return }
+        
+        viewModel.signIn(email: email, password: password)
+    }
+    
+    
 }
 
