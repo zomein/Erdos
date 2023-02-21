@@ -61,7 +61,16 @@ class SignInViewController: UIViewController {
         return butt
     }()
     
-    let viewModel = SignInViewModel()
+    let viewModel: SignInViewModel
+    
+    init(viewModel: SignInViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: Lifecycle
     override func viewDidLoad() {
@@ -131,7 +140,9 @@ class SignInViewController: UIViewController {
     private func goToContactsPage() {
         failedSignInLabel.isHidden = true
         
-        let homeVC = ContactListViewController()
+        let networkingService = NetworkingManager()
+        let contactListViewModel = ContactListViewModel(networkingService: networkingService)
+        let homeVC = ContactListViewController(viewModel: contactListViewModel)
         
         navigationController?.pushViewController(homeVC, animated: false)
     }

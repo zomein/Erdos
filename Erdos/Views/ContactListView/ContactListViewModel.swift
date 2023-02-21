@@ -10,11 +10,16 @@ import ProgressHUD
 
 // using observable object to demonstrate one to many communication
 final class ContactListViewModel {
+    private let networkingService: FriendFetchingService
     var friends: ObservableObject<[Friend]?> = ObservableObject(nil) // data needed for contact list
+    
+    init(networkingService: FriendFetchingService) {
+        self.networkingService = networkingService
+    }
     
     func fetchFriends() {
         ProgressHUD.show()
-        NetworkingManager.shared.fetchAllFriends { [weak self] result in
+        networkingService.fetchAllFriends { [weak self] result in
             switch result {
             case .success(let friends):
                 self?.friends.value = friends

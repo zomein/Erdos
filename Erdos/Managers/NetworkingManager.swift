@@ -7,12 +7,13 @@
 
 import Foundation
 
-final class NetworkingManager {
+protocol FriendFetchingService {
+    func signIn(email: String, password: String, completion: @escaping (Bool) -> Void)
     
-    // MARK: establish as singleton
-    static let shared = NetworkingManager()
+    func fetchAllFriends(completion: @escaping (Result<[Friend], Error>) -> Void)
+}
 
-    private init() { }
+final class NetworkingManager: FriendFetchingService {
     
     // MARK: Mock Sign In Authentication
     func signIn(email: String, password: String, completion: @escaping (Bool) -> Void) {

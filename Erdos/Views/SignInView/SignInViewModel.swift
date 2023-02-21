@@ -9,11 +9,15 @@ import Foundation
 import ProgressHUD
 
 final class SignInViewModel {
-    // other objects can subscribe/bind to listen to changes from this observable object
+    private let networkingService: FriendFetchingService
     var signInSuccessful: ObservableObject<Bool?> = ObservableObject(nil)
     
+    init(networkingService: FriendFetchingService) {
+        self.networkingService = networkingService
+    }
+    
     func signIn(email: String, password: String) {
-        NetworkingManager.shared.signIn(email: email, password: password) { wasSuccessful in
+        networkingService.signIn(email: email, password: password) { wasSuccessful in
             self.signInSuccessful.value = wasSuccessful
         }
     }
