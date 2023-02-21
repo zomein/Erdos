@@ -10,6 +10,7 @@
 		D8878FA729A509A50032EE28 /* SignInViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8878FA629A509A50032EE28 /* SignInViewTests.swift */; };
 		D8878FA929A50C3B0032EE28 /* ContactListViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8878FA829A50C3B0032EE28 /* ContactListViewTests.swift */; };
 		D8878FAB29A50C4E0032EE28 /* ContactDetailsViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8878FAA29A50C4E0032EE28 /* ContactDetailsViewTests.swift */; };
+		D8896F7729A530DE004E4D0B /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8896F7629A530DE004E4D0B /* NetworkingError.swift */; };
 		D894127629A2E3D900A7E5DB /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D894127529A2E3D900A7E5DB /* ContactDetailsViewController.swift */; };
 		D894127929A2E6C700A7E5DB /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D894127829A2E6C700A7E5DB /* Friend.swift */; };
 		D894127B29A2E84900A7E5DB /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = D894127A29A2E84900A7E5DB /* Server.swift */; };
@@ -26,7 +27,6 @@
 		D8D648D729A4207600963222 /* ContactDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D648D629A4207600963222 /* ContactDetailsViewModel.swift */; };
 		D8DA6A8629A5071D000B3C85 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DA6A8529A5071D000B3C85 /* MockNetworkManager.swift */; };
 		D8E13B2E29A3C6FA0006A0DB /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = D8E13B2D29A3C6FA0006A0DB /* ProgressHUD */; };
-		D8E1FEDB29A45E8D0041DF4F /* ErdosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E1FEDA29A45E8D0041DF4F /* ErdosTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +43,7 @@
 		D8878FA629A509A50032EE28 /* SignInViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewTests.swift; sourceTree = "<group>"; };
 		D8878FA829A50C3B0032EE28 /* ContactListViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewTests.swift; sourceTree = "<group>"; };
 		D8878FAA29A50C4E0032EE28 /* ContactDetailsViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewTests.swift; sourceTree = "<group>"; };
+		D8896F7629A530DE004E4D0B /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
 		D894127529A2E3D900A7E5DB /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
 		D894127829A2E6C700A7E5DB /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		D894127A29A2E84900A7E5DB /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
@@ -61,7 +62,6 @@
 		D8D648D629A4207600963222 /* ContactDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewModel.swift; sourceTree = "<group>"; };
 		D8DA6A8529A5071D000B3C85 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
 		D8E1FED829A45E8D0041DF4F /* ErdosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ErdosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8E1FEDA29A45E8D0041DF4F /* ErdosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErdosTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				D894127A29A2E84900A7E5DB /* Server.swift */,
+				D8896F7629A530DE004E4D0B /* NetworkingError.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -190,7 +191,6 @@
 		D8E1FED929A45E8D0041DF4F /* ErdosTests */ = {
 			isa = PBXGroup;
 			children = (
-				D8E1FEDA29A45E8D0041DF4F /* ErdosTests.swift */,
 				D8878FA629A509A50032EE28 /* SignInViewTests.swift */,
 				D8878FA829A50C3B0032EE28 /* ContactListViewTests.swift */,
 				D8878FAA29A50C4E0032EE28 /* ContactDetailsViewTests.swift */,
@@ -310,6 +310,7 @@
 				D8D648D729A4207600963222 /* ContactDetailsViewModel.swift in Sources */,
 				D8BAE4D429A0108500574084 /* AppDelegate.swift in Sources */,
 				D894127629A2E3D900A7E5DB /* ContactDetailsViewController.swift in Sources */,
+				D8896F7729A530DE004E4D0B /* NetworkingError.swift in Sources */,
 				D8B8035D29A27BD20085EFC1 /* FriendCell.swift in Sources */,
 				D894127B29A2E84900A7E5DB /* Server.swift in Sources */,
 				D894127D29A2EA8C00A7E5DB /* NetworkingManager.swift in Sources */,
@@ -327,7 +328,6 @@
 				D8DA6A8629A5071D000B3C85 /* MockNetworkManager.swift in Sources */,
 				D8878FA729A509A50032EE28 /* SignInViewTests.swift in Sources */,
 				D8878FAB29A50C4E0032EE28 /* ContactDetailsViewTests.swift in Sources */,
-				D8E1FEDB29A45E8D0041DF4F /* ErdosTests.swift in Sources */,
 				D8878FA929A50C3B0032EE28 /* ContactListViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

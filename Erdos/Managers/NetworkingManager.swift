@@ -10,7 +10,7 @@ import Foundation
 protocol FriendFetchingService {
     func signIn(email: String, password: String, completion: @escaping (Bool) -> Void)
     
-    func fetchAllFriends(completion: @escaping (Result<[Friend], Error>) -> Void)
+    func fetchAllFriends(completion: @escaping (Result<[Friend], NetworkingError>) -> Void)
 }
 
 class NetworkingManager: FriendFetchingService {
@@ -27,7 +27,7 @@ class NetworkingManager: FriendFetchingService {
     }
     
     // MARK: Mock Fetching Calls
-    func fetchAllFriends(completion: @escaping (Result<[Friend], Error>) -> Void) {
+    func fetchAllFriends(completion: @escaping (Result<[Friend], NetworkingError>) -> Void) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) { // simulate 3 second fetch call
             completion(.success(Server.friendsData))
         }

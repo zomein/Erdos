@@ -10,9 +10,9 @@ import Foundation
 
 class MockNetworkingManager: NetworkingManager {
     
-    // use these variables to assign results for testing
+    // use these variables to assign mock results for testing
     var isSignInSuccessfulResult: Bool?
-    var fetchedFriendsResult: Result<[Friend], Error>?
+    var fetchedFriendsResult: Result<[Friend], NetworkingError>?
     
     override func signIn(email: String, password: String, completion: @escaping (Bool) -> Void) {
         if let result = isSignInSuccessfulResult {
@@ -20,7 +20,7 @@ class MockNetworkingManager: NetworkingManager {
         }
     }
     
-    override func fetchAllFriends(completion: @escaping (Result<[Friend], Error>) -> Void) {
+    override func fetchAllFriends(completion: @escaping (Result<[Friend], NetworkingError>) -> Void) {
         if let result = fetchedFriendsResult {
             completion(result)
         }

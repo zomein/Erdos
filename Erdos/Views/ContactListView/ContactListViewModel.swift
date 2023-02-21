@@ -22,7 +22,9 @@ class ContactListViewModel {
     }
     
     func fetchFriends() {
-        ProgressHUD.show()
+        ProgressHUD.animationType = .circleRotateChase
+        ProgressHUD.colorAnimation = .blue
+        ProgressHUD.show("Loading Contacts...")
         networkingService.fetchAllFriends { [weak self] result in
             switch result {
             case .success(let friends):
