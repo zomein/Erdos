@@ -66,6 +66,7 @@ class SignInViewController: UIViewController {
     init(viewModel: SignInViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        self.viewModel.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -77,7 +78,6 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-        setupBinders()
     }
     
     // MARK: Helper Methods
@@ -125,17 +125,6 @@ class SignInViewController: UIViewController {
         
         failedSignInLabel.isHidden = true
     }
-
-    private func setupBinders() {
-        // subscribe to 'signInSuccessful' property
-        viewModel.signInSuccessful.bind { [weak self] signInSuccessful in
-            if signInSuccessful == true {
-                self?.goToContactsPage()
-            } else {
-                self?.handleSignInFailed()
-            }
-        }
-    }
     
     private func goToContactsPage() {
         failedSignInLabel.isHidden = true
@@ -163,7 +152,14 @@ class SignInViewController: UIViewController {
         
         viewModel.signIn(email: email, password: password)
     }
-    
-    
 }
 
+extension SignInViewController: SignInServiceDelegate {
+    func updateViewOnSignIn(isSuccessful: Bool) {
+        if isSuccessful == true {
+            goToContactsPage()
+        } else {
+            handleSignInFailed()
+        }
+    }
+}

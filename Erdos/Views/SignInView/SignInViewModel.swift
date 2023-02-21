@@ -6,19 +6,22 @@
 //
 
 import Foundation
-import ProgressHUD
 
-final class SignInViewModel {
+protocol SignInServiceDelegate {
+    func updateViewOnSignIn(isSuccessful: Bool)
+}
+
+class SignInViewModel {
     private let networkingService: FriendFetchingService
-    var signInSuccessful: ObservableObject<Bool?> = ObservableObject(nil)
+    var delegate: SignInServiceDelegate?
     
     init(networkingService: FriendFetchingService) {
         self.networkingService = networkingService
     }
     
     func signIn(email: String, password: String) {
-        networkingService.signIn(email: email, password: password) { wasSuccessful in
-            self.signInSuccessful.value = wasSuccessful
+        networkingService.signIn(email: email, password: password) { [weak self] successResult in
+            self?.delegate?.updateViewOnSignIn(isSuccessful: successResult)
         }
     }
 }

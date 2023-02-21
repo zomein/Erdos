@@ -13,7 +13,7 @@ protocol FriendFetchingService {
     func fetchAllFriends(completion: @escaping (Result<[Friend], Error>) -> Void)
 }
 
-final class NetworkingManager: FriendFetchingService {
+class NetworkingManager: FriendFetchingService {
     
     // MARK: Mock Sign In Authentication
     func signIn(email: String, password: String, completion: @escaping (Bool) -> Void) {

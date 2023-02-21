@@ -7,7 +7,6 @@
 
 import Foundation
 
-// using protocol delegate pattern in this view model to demonstrate one to one communication
 protocol ContactDetailsDelegate: AnyObject {
     func updateView(friendName: String)
 }

@@ -8,10 +8,14 @@
 import Foundation
 import ProgressHUD
 
-// using observable object to demonstrate one to many communication
-final class ContactListViewModel {
+protocol FetchedFriendsDelegate {
+    func updateView(with friends: [Friend])
+}
+
+class ContactListViewModel {
     private let networkingService: FriendFetchingService
-    var friends: ObservableObject<[Friend]?> = ObservableObject(nil) // data needed for contact list
+    var delegate: FetchedFriendsDelegate?
+    var friends: [Friend]?
     
     init(networkingService: FriendFetchingService) {
         self.networkingService = networkingService
@@ -22,7 +26,8 @@ final class ContactListViewModel {
         networkingService.fetchAllFriends { [weak self] result in
             switch result {
             case .success(let friends):
-                self?.friends.value = friends
+                self?.friends = friends
+                self?.delegate?.updateView(with: friends)
                 ProgressHUD.dismiss()
             case .failure(let err):
                 ProgressHUD.showError(err.localizedDescription)

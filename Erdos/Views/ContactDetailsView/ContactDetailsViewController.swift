@@ -15,7 +15,7 @@ class ContactDetailsViewController: UIViewController {
     init(viewModel: ContactDetailsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-        self.viewModel.delegate = self // allows view model to communicate with this class
+        self.viewModel.delegate = self 
     }
     
     required init?(coder: NSCoder) {
