@@ -29,10 +29,10 @@ class ContactListViewController: UITableViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Close", style: .done, target: self, action: #selector(closeBtnTapped))
     }
     
+    // listen to/handle changes in friends array
     private func setupBindings() {
-        // what to do when friends array is updated
         viewModel.friends.bind { [weak self] friends in
-            self?.tableView.reloadData() // update list to show updated friends data
+            self?.tableView.reloadData()
         }
     }
     
@@ -52,7 +52,6 @@ class ContactListViewController: UITableViewController {
         else {
             fatalError("could not dequeue friend cell")
         }
-        
         
         friendCell.selectionStyle = .none
         friendCell.accessoryType = .disclosureIndicator

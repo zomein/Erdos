@@ -27,7 +27,6 @@ final class ObservableObject<T> {
     
     // allows observable object to be binded to, so that it can be observed/listened to
     func bind(_ listener: @escaping (T) -> Void) {
-        // listener(value)
         self.listener = listener
     }
     

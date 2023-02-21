@@ -23,7 +23,18 @@
 		D8D648D529A417B600963222 /* ContactListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D648D429A417B600963222 /* ContactListViewModel.swift */; };
 		D8D648D729A4207600963222 /* ContactDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D648D629A4207600963222 /* ContactDetailsViewModel.swift */; };
 		D8E13B2E29A3C6FA0006A0DB /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = D8E13B2D29A3C6FA0006A0DB /* ProgressHUD */; };
+		D8E1FEDB29A45E8D0041DF4F /* ErdosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E1FEDA29A45E8D0041DF4F /* ErdosTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D8E1FEDC29A45E8D0041DF4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8BAE4C829A0108500574084 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8BAE4CF29A0108500574084;
+			remoteInfo = Erdos;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D894127529A2E3D900A7E5DB /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +54,8 @@
 		D8BAE4E129A0108700574084 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8D648D429A417B600963222 /* ContactListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewModel.swift; sourceTree = "<group>"; };
 		D8D648D629A4207600963222 /* ContactDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewModel.swift; sourceTree = "<group>"; };
+		D8E1FED829A45E8D0041DF4F /* ErdosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ErdosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8E1FEDA29A45E8D0041DF4F /* ErdosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErdosTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +64,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8E13B2E29A3C6FA0006A0DB /* ProgressHUD in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8E1FED529A45E8D0041DF4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				D8BAE4D229A0108500574084 /* Erdos */,
+				D8E1FED929A45E8D0041DF4F /* ErdosTests */,
 				D8BAE4D129A0108500574084 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				D8BAE4D029A0108500574084 /* Erdos.app */,
+				D8E1FED829A45E8D0041DF4F /* ErdosTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -160,6 +182,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		D8E1FED929A45E8D0041DF4F /* ErdosTests */ = {
+			isa = PBXGroup;
+			children = (
+				D8E1FEDA29A45E8D0041DF4F /* ErdosTests.swift */,
+			);
+			path = ErdosTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -183,6 +213,24 @@
 			productReference = D8BAE4D029A0108500574084 /* Erdos.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D8E1FED729A45E8D0041DF4F /* ErdosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8E1FEE029A45E8D0041DF4F /* Build configuration list for PBXNativeTarget "ErdosTests" */;
+			buildPhases = (
+				D8E1FED429A45E8D0041DF4F /* Sources */,
+				D8E1FED529A45E8D0041DF4F /* Frameworks */,
+				D8E1FED629A45E8D0041DF4F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D8E1FEDD29A45E8D0041DF4F /* PBXTargetDependency */,
+			);
+			name = ErdosTests;
+			productName = ErdosTests;
+			productReference = D8E1FED829A45E8D0041DF4F /* ErdosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -195,6 +243,10 @@
 				TargetAttributes = {
 					D8BAE4CF29A0108500574084 = {
 						CreatedOnToolsVersion = 14.2;
+					};
+					D8E1FED729A45E8D0041DF4F = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = D8BAE4CF29A0108500574084;
 					};
 				};
 			};
@@ -215,6 +267,7 @@
 			projectRoot = "";
 			targets = (
 				D8BAE4CF29A0108500574084 /* Erdos */,
+				D8E1FED729A45E8D0041DF4F /* ErdosTests */,
 			);
 		};
 /* End PBXProject section */
@@ -226,6 +279,13 @@
 			files = (
 				D8BAE4E029A0108700574084 /* LaunchScreen.storyboard in Resources */,
 				D8BAE4DD29A0108700574084 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8E1FED629A45E8D0041DF4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,7 +312,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D8E1FED429A45E8D0041DF4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8E1FEDB29A45E8D0041DF4F /* ErdosTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D8E1FEDD29A45E8D0041DF4F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8BAE4CF29A0108500574084 /* Erdos */;
+			targetProxy = D8E1FEDC29A45E8D0041DF4F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D8BAE4DE29A0108700574084 /* LaunchScreen.storyboard */ = {
@@ -438,6 +514,48 @@
 			};
 			name = Release;
 		};
+		D8E1FEDE29A45E8D0041DF4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HHX8PV32C5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zomein.ErdosTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Erdos.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Erdos";
+			};
+			name = Debug;
+		};
+		D8E1FEDF29A45E8D0041DF4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HHX8PV32C5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zomein.ErdosTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Erdos.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Erdos";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -455,6 +573,15 @@
 			buildConfigurations = (
 				D8BAE4E529A0108700574084 /* Debug */,
 				D8BAE4E629A0108700574084 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8E1FEE029A45E8D0041DF4F /* Build configuration list for PBXNativeTarget "ErdosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8E1FEDE29A45E8D0041DF4F /* Debug */,
+				D8E1FEDF29A45E8D0041DF4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

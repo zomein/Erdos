@@ -66,7 +66,6 @@ class SignInViewController: UIViewController {
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         setupUI()
         setupBinders()
@@ -133,6 +132,7 @@ class SignInViewController: UIViewController {
         failedSignInLabel.isHidden = true
         
         let homeVC = ContactListViewController()
+        
         navigationController?.pushViewController(homeVC, animated: false)
     }
     

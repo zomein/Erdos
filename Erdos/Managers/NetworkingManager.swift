@@ -11,8 +11,6 @@ final class NetworkingManager {
     
     // MARK: establish as singleton
     static let shared = NetworkingManager()
-    
-    private var fetchedFriends: [Friend]?
 
     private init() { }
     
