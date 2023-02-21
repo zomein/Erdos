@@ -66,8 +66,16 @@ class ContactListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailsVC = ContactDetailsViewController()
-        navigationController?.pushViewController(detailsVC, animated: false)
+        guard let friends = viewModel.friends.value else {
+            fatalError("friends must be populated for contact list")
+        }
+        
+        let currentFriend = friends[indexPath.row]
+        let friendName = currentFriend.name
+        let detailsViewModel = ContactDetailsViewModel(friendName: friendName)
+        let detailsVC = ContactDetailsViewController(viewModel: detailsViewModel)
+        
+        navigationController?.pushViewController(detailsVC, animated: true)
     }
     
 }

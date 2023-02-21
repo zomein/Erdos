@@ -51,7 +51,7 @@ class FriendCell: UITableViewCell {
     }()
     
     func configure(friend: Friend) {
-        nameLabel.text = friend.name
+        nameString.text = friend.name
         emailString.text = friend.email
         
         setupUI()

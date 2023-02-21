@@ -8,8 +8,9 @@
 import Foundation
 import ProgressHUD
 
+// using observable object to demonstrate one to many communication
 final class ContactListViewModel {
-    var friends: ObservableObject<[Friend]?> = ObservableObject(nil)
+    var friends: ObservableObject<[Friend]?> = ObservableObject(nil) // data needed for contact list
     
     func fetchFriends() {
         ProgressHUD.show()

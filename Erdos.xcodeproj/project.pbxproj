@@ -21,6 +21,7 @@
 		D8BAE4DD29A0108700574084 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8BAE4DC29A0108700574084 /* Assets.xcassets */; };
 		D8BAE4E029A0108700574084 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8BAE4DE29A0108700574084 /* LaunchScreen.storyboard */; };
 		D8D648D529A417B600963222 /* ContactListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D648D429A417B600963222 /* ContactListViewModel.swift */; };
+		D8D648D729A4207600963222 /* ContactDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D648D629A4207600963222 /* ContactDetailsViewModel.swift */; };
 		D8E13B2E29A3C6FA0006A0DB /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = D8E13B2D29A3C6FA0006A0DB /* ProgressHUD */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		D8BAE4DF29A0108700574084 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8BAE4E129A0108700574084 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8D648D429A417B600963222 /* ContactListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewModel.swift; sourceTree = "<group>"; };
+		D8D648D629A4207600963222 /* ContactDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				D894127529A2E3D900A7E5DB /* ContactDetailsViewController.swift */,
+				D8D648D629A4207600963222 /* ContactDetailsViewModel.swift */,
 			);
 			path = ContactDetailsView;
 			sourceTree = "<group>";
@@ -102,19 +105,59 @@
 			children = (
 				D8BAE4D329A0108500574084 /* AppDelegate.swift */,
 				D8BAE4D529A0108500574084 /* SceneDelegate.swift */,
-				D8B8035B29A27B5D0085EFC1 /* SignInView */,
-				D8B8035A29A27B4A0085EFC1 /* ContactListView */,
-				D894127729A2E56F00A7E5DB /* ContactDetailsView */,
+				D8D648D829A421A400963222 /* Models */,
+				D8D648DC29A4226D00963222 /* Views */,
+				D8D648D929A421BB00963222 /* Managers */,
+				D8D648DA29A421D400963222 /* Custom Cells */,
+				D8D648DB29A4224700963222 /* Support */,
 				D8BAE4DC29A0108700574084 /* Assets.xcassets */,
 				D8BAE4DE29A0108700574084 /* LaunchScreen.storyboard */,
 				D8BAE4E129A0108700574084 /* Info.plist */,
-				D8B8035C29A27BD20085EFC1 /* FriendCell.swift */,
-				D894127829A2E6C700A7E5DB /* Friend.swift */,
-				D894127A29A2E84900A7E5DB /* Server.swift */,
-				D894127C29A2EA8C00A7E5DB /* NetworkingManager.swift */,
-				D894127E29A308CC00A7E5DB /* ObservableObject.swift */,
 			);
 			path = Erdos;
+			sourceTree = "<group>";
+		};
+		D8D648D829A421A400963222 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D894127829A2E6C700A7E5DB /* Friend.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D8D648D929A421BB00963222 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D894127C29A2EA8C00A7E5DB /* NetworkingManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		D8D648DA29A421D400963222 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D8B8035C29A27BD20085EFC1 /* FriendCell.swift */,
+			);
+			path = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		D8D648DB29A4224700963222 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				D894127E29A308CC00A7E5DB /* ObservableObject.swift */,
+				D894127A29A2E84900A7E5DB /* Server.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		D8D648DC29A4226D00963222 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D8B8035B29A27B5D0085EFC1 /* SignInView */,
+				D8B8035A29A27B4A0085EFC1 /* ContactListView */,
+				D894127729A2E56F00A7E5DB /* ContactDetailsView */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +238,7 @@
 			files = (
 				D8BAE4D829A0108500574084 /* SignInViewController.swift in Sources */,
 				D894127929A2E6C700A7E5DB /* Friend.swift in Sources */,
+				D8D648D729A4207600963222 /* ContactDetailsViewModel.swift in Sources */,
 				D8BAE4D429A0108500574084 /* AppDelegate.swift in Sources */,
 				D894127629A2E3D900A7E5DB /* ContactDetailsViewController.swift in Sources */,
 				D8B8035D29A27BD20085EFC1 /* FriendCell.swift in Sources */,

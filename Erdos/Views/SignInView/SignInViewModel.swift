@@ -6,10 +6,10 @@
 //
 
 import Foundation
-import ProgressHUD // 3rd party loading indicator package
+import ProgressHUD
 
-// responsible for all business logic dealing with the sign in page
 final class SignInViewModel {
+    // other objects can subscribe/bind to listen to changes from this observable object
     var signInSuccessful: ObservableObject<Bool?> = ObservableObject(nil)
     
     func signIn(email: String, password: String) {
